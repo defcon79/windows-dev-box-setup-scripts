@@ -1,0 +1,4 @@
+https://alanbarber.com/post/how-to-customize-the-git-for-windows-bash-shell-prompt/
+
+put in c:\Program Files\Git\etc\profile.d
+
