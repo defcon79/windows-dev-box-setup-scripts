@@ -4,6 +4,9 @@
 
 Write-Host "Start dev setup PS Script `n----------------------"
 
+Write-Host "installing chocolatey"
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
 #Disable-UAC
 
 $curDir = $PSScriptRoot
