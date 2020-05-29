@@ -4,11 +4,11 @@
 
 Write-Host "Start New PC setup PS Script `n----------------------"
 
-Set-Variable -Name "ChocolateyInstall" -Value (Read-Host -Prompt "Install location")
-New-Item $ChocolateyInstall -Type Directory -Force
-[Environment]::SetEnvironmentVariable("ChocolateyInstall", $ChocolateyInstall, "User")
+#Set-Variable -Name "ChocolateyInstall" -Value (Read-Host -Prompt "Install location")
+#New-Item $ChocolateyInstall -Type Directory -Force
+#[Environment]::SetEnvironmentVariable("ChocolateyInstall", $ChocolateyInstall, "User")
 
-Write-Host "installing chocolatey"
+Write-Host "installing chocolatey to path: "  $env:ChocolateyInstall 
 iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 #Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
@@ -28,7 +28,7 @@ function executeScript {
 }
 
 #--- Setting up Windows ---
-executeScript "hello.ps1";
+#executeScript "hello.ps1";
 executeScript "FileExplorerSettings.ps1";
 # executeScript "NewPcApps.ps1";
 
